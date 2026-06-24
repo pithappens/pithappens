@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pit Happens • Official Tees</title>
+    <script src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcdn.tailwindcss.com%2F&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187554578%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=PJfILC4iCYIb4%2F9USoCLoB5NP%2BbbEkfTkiaWNEEJxSo%3D&reserved=0"></script>
+    <link rel="stylesheet" href="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F6.5.1%2Fcss%2Fall.min.css&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187586862%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=wOT4qfSxZU6FRcqi7QY%2BpPHZOCqyucLgF8KXz0KEgvU%3D&reserved=0">
+    <style>
+        @import url('https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DInter%3Awght%40400%3B500%3B600%3B700%26display%3Dswap&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187605884%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=8Hd4WMKQRwFNr63LzcJ8fcODpJTAc1FYgFjSESzZlZs%3D&reserved=0');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .shirt-bg { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-purple-700 rounded-xl flex items-center justify-center text-white font-bold text-2xl">P</div>
+                <div>
+                    <h1 class="text-2xl font-bold">Pit Happens</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Price Hill Panthers</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="shirt-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-6xl font-bold leading-none tracking-tighter mb-6">
+                    PIT HAPPENS<br>
+                    <span class="text-purple-200">12th Man Edition</span>
+                </h2>
+                <p class="text-xl text-purple-100 mb-8">Premium tees for Panthers fans.</p>
+                <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})"
+                        class="px-8 py-4 bg-white text-purple-700 rounded-3xl font-semibold text-lg hover:scale-105 transition">
+                    Order Now
+                </button>
+            </div>
+            <div class="flex justify-center">
+                <img id="main-shirt" src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.postimg.cc%2FR0thSzgF%2FPit.jpg&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187623733%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=77nOa3WWPJCIAFQog3qPFtmlKLlDEsg8mIC2ZjZHnU4%3D&reserved=0"
+                     class="w-full max-w-md drop-shadow-2xl rounded-3xl" alt="Pit Happens Tee">
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Selector -->
+    <section class="py-12 bg-white border-b">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-center text-xl font-semibold mb-8">Choose Color</h3>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <div onclick="changeColor(0)" class="cursor-pointer text-center">
+                    <img src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.postimg.cc%2FR0thSzgF%2FPit.jpg&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187642321%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=A8KshIeRbNfMbZbydug3BbJQYtm99p7lVRMi3hHGMAc%3D&reserved=0" class="w-40 h-40 object-contain mx-auto rounded-2xl shadow" alt="Purple">
+                    <p class="mt-2 font-medium">Purple</p>
+                </div>
+                <div onclick="changeColor(1)" class="cursor-pointer text-center">
+                    <img src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.postimg.cc%2Fplaceholder-white.jpg&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187661900%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=vzg4t0Ykh7FhZ%2Fd4ktS6dy8phTUDEnRR7pBoUxu3q0M%3D&reserved=0" class="w-40 h-40 object-contain mx-auto rounded-2xl shadow" alt="White">
+                    <p class="mt-2 font-medium">White + Purple Print</p>
+                </div>
+                <div onclick="changeColor(2)" class="cursor-pointer text-center">
+                    <img src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.postimg.cc%2Fplaceholder-black.jpg&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187679944%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=mHEujAN5jG%2BwFvtTeyOAdmATSU7JYyYwmMwTMiDvoUE%3D&reserved=0" class="w-40 h-40 object-contain mx-auto rounded-2xl shadow" alt="Black">
+                    <p class="mt-2 font-medium">Black + White Print</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="shop" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-10">
+                <!-- Form -->
+                <div class="lg:col-span-7">
+                    <h2 class="text-4xl font-bold mb-8">Place Your Order</h2>
+                    <div class="bg-white rounded-3xl shadow p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">First Name</label>
+                                <input id="first-name" type="text" class="w-full px-5 py-4 border rounded-2xl" value="Joe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Last Name</label>
+                                <input id="last-name" type="text" class="w-full px-5 py-4 border rounded-2xl" value="Panther">
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium mb-2">Email (Confirmation)</label>
+                            <input id="email" type="email" class="w-full px-5 py-4 border rounded-2xl" placeholder="you@email.com">
+                        </div>
+
+                        <div id="items-container" class="mt-8"></div>
+
+                        <button onclick="addItemRow()" class="mt-6 w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl hover:border-purple-600 hover:text-purple-600">
+                            + Add Another Shirt
+                        </button>
+
+                        <div class="mt-8 pt-8 border-t flex justify-between text-2xl font-bold">
+                            <div>Total</div>
+                            <div id="total-display" class="font-mono">$0.00</div>
+                        </div>
+
+                        <button onclick="submitOrder()" class="mt-8 w-full bg-purple-700 hover:bg-purple-800 text-white py-6 rounded-3xl text-xl font-semibold">
+                            Review Order & Pay @jmdoogs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar Preview -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-8 shadow sticky top-8">
+                        <h3 class="font-semibold mb-6">Order Preview</h3>
+                        <div id="order-preview" class="min-h-[200px]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code -->
+    <section class="py-20 bg-white text-center">
+        <h2 class="text-4xl font-bold mb-6">Scan to Order</h2>
+        <p class="max-w-md mx-auto mb-8 text-gray-600">Print this QR code for your table or merch stand</p>
+        <div class="inline-block p-8 bg-white rounded-3xl shadow-xl" id="qrcode"></div>
+    </section>
+
+    <script src="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fqrcodejs%401.0.0%2Fqrcode.min.js&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187699229%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=zKicf2O4mXwNz5n1YtN3y3CyaMlUgvi6NIOnMcq9bis%3D&reserved=0"></script>
+    <script>
+        let currentColor = 0;
+        const shirtImages = [
+            "https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.postimg.cc%2FR0thSzgF%2FPit.jpg&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187717010%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=eUu%2BP417OuaC0vem3htWq4D431ODj9xnfk8MnzbF9p8%3D&reserved=0",   // Purple - YOUR UPLOADED IMAGE
+            "https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F400x400%2Fffffff%2F4c1d95%3Ftext%3DWhite%2BVersion&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187735246%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=oGVf9a3SkC9LbSBVZwpu4ueA8%2BGZigGPk%2F7UhmvhpFo%3D&reserved=0",    // White placeholder
+            "https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvia.placeholder.com%2F400x400%2F000000%2Fffffff%3Ftext%3DBlack%2BVersion&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187753441%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=WgDtxo7U8GfB5eZHh9exjjKA4YZx%2BNMZoqlHOkz8yRw%3D&reserved=0"     // Black placeholder
+        ];
+
+        function changeColor(n) {
+            currentColor = n;
+            document.getElementById('main-shirt').src = shirtImages[n];
+        }
+
+        function addItemRow() {
+            const container = document.getElementById('items-container');
+            const id = container.children.length + 1;
+            const row = document.createElement('div');
+            row.className = "item-row border rounded-2xl p-6 mb-6";
+            row.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-medium">Shirt #${id}</span>
+                    <button onclick="this.closest('.item-row').remove(); updateTotal()" class="text-red-500"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium mb-1">SIZE</label>
+                        <select onchange="updateTotal()" class="w-full px-4 py-3 border rounded-xl">
+                            <option value="S">S</option><option value="M">M</option><option value="L">L</option>
+                            <option value="XL" selected>XL</option><option value="XXL">XXL</option><option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium mb-1">QTY</label>
+                        <input type="number" value="1" min="1" onchange="updateTotal()" class="w-full px-4 py-3 border rounded-xl text-center">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium mb-1">PRICE</label>
+                        <div class="price-display px-4 py-3 border rounded-xl bg-gray-50 font-mono text-center">$20.00</div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(row);
+            updateTotal();
+        }
+
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('.item-row').forEach(row => {
+                const qty = parseInt(row.querySelector('input[type="number"]').value) || 0;
+                const size = row.querySelector('select').value;
+                const price = (size === 'XXL' || size === 'XXXL') ? 22.5 : 20;
+                row.querySelector('.price-display').textContent = '$' + price.toFixed(2);
+                total += price * qty;
+            });
+            document.getElementById('total-display').textContent = '$' + total.toFixed(2);
+        }
+
+        function getOrderData() {
+            const name = document.getElementById('first-name').value + " " + document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const colorName = ["Purple", "White", "Black"][currentColor];
+            let items = [];
+            document.querySelectorAll('.item-row').forEach(row => {
+                const size = row.querySelector('select').value;
+                const qty = parseInt(row.querySelector('input').value) || 0;
+                if (qty > 0) items.push({size, qty, price: (size === 'XXL' || size === 'XXXL') ? 22.5 : 20});
+            });
+            const total = items.reduce((a, b) => a + b.price * b.qty, 0);
+            return {name, email, color: colorName, items, total};
+        }
+
+        function submitOrder() {
+            const data = getOrderData();
+            if (data.items.length === 0) return alert("Please add at least one shirt.");
+
+            const note = encodeURIComponent(`Pit Happens Order - ${data.name} - ${data.color}`);
+            const venmoUrl = `https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvenmo.com%2Fjmdoogs%3Ftxn%3Dpay%26amount%3D%24&data=05%7C02%7Cdoogan.joe%40epa.gov%7Ca6a5713bc4274fca719608ded2174c60%7C88b378b367484867acf976aacbeca6a7%7C0%7C0%7C639179195187772483%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&sdata=XZKr7r7vY0sdxIaz2yDdchke0%2FKns3XS47rqP129VbI%3D&reserved=0{data.total.toFixed(2)}&note=${note}`;
+
+            if (data.email) alert(`✅ Order placed!\n\nConfirmation sent to ${data.email}\nTotal: $${data.total.toFixed(2)}\n\nOpening Venmo...`);
+            window.open(venmoUrl, '_blank');
+        }
+
+        window.onload = () => {
+            addItemRow();
+            new QRCode(document.getElementById("qrcode"), {
+                text: window.location.href,
+                width: 256,
+                height: 256
+            });
+        };
+    </script>
+</body>
+</html>
+
+
