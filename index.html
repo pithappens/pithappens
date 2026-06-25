@@ -58,7 +58,6 @@
                 </button>
             </div>
             <div class="flex justify-center">
-                <!-- Image uses object-contain to prevent any cropping -->
                 <img id="main-shirt" src="https://i.postimg.cc/R0thSzgF/Pit.jpg" 
                      class="w-full max-w-md drop-shadow-2xl rounded-3xl h-auto mx-auto transition-all duration-300" alt="Pit Happens Tee">
             </div>
@@ -169,7 +168,6 @@
     
     <script>
         // --- 1. PRODUCT CATALOG DATA ---
-        // Add new image URLs here as you get them!
         const catalog = {
             "Football": [
                 { name: "Purple Option", desc: "Official Team Color", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Classic Purple Team Edition", iconBg: "bg-purple-700" },
@@ -183,13 +181,13 @@
                 { name: "Baseball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Baseball Edition Placeholder", iconBg: "bg-red-600" }
             ],
             "Lacrosse": [
-                { name: "Lacrosse Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Lacrosse+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Lacrosse Edition Placeholder", iconBg: "bg-green-600" }
+                { name: "Lacrosse Tee", desc: "Official Lacrosse Edition", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Official Lacrosse Tee", iconBg: "bg-green-600" }
             ],
             "Soccer": [
                 { name: "Soccer Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Soccer+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Soccer Edition Placeholder", iconBg: "bg-blue-500" }
             ],
             "Volleyball": [
-                { name: "Volleyball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Volleyball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Volleyball Edition Placeholder", iconBg: "bg-teal-500" }
+                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/6Q3zNSMQ/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500" }
             ],
             "Price Hill Special Edition": [
                 { name: "Special Edition", desc: "Where Pit Happens", image: "https://i.postimg.cc/VkJHTw8T/price-hill.jpg", heroTitle: "", previewTxt: "Viewing: Special Edition Price Hill", iconBg: "bg-gray-400" }
@@ -397,7 +395,6 @@
                 console.log("EmailJS not yet configured. Bypassing directly to Venmo.");
             }
 
-            // Note includes Sport Category + Shirt Option
             const note = encodeURIComponent(`Pit Happens: ${data.name} (${data.color} | Sizes: ${itemSummaryString})`);
             const venmoUrl = `https://venmo.com/jmdoogs?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
 
