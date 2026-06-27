@@ -21,7 +21,6 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -34,7 +33,6 @@
         </div>
     </header>
 
-    <!-- Public Counter -->
     <div class="bg-yellow-400 py-4 text-center font-medium shadow-sm">
         <div class="max-w-6xl mx-auto px-6">
             <span class="text-lg">🔥 <span id="batch-count" class="font-bold text-3xl">12</span> shirts since last bulk order</span>
@@ -42,7 +40,6 @@
         </div>
     </div>
 
-    <!-- Hero -->
     <section class="shirt-bg text-white py-20">
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -61,7 +58,6 @@
                 <img id="main-shirt" src="https://i.postimg.cc/R0thSzgF/Pit.jpg" 
                      class="w-full max-w-md drop-shadow-2xl rounded-3xl h-auto transition-all duration-300" alt="Pit Happens Tee">
                 
-                <!-- Dynamic Coming Soon Badge -->
                 <div id="coming-soon-badge" class="hidden mt-6 bg-gray-800 text-yellow-400 w-full max-w-md text-center py-3 rounded-2xl font-bold uppercase tracking-widest shadow-lg border border-gray-700">
                     Coming Soon
                 </div>
@@ -69,12 +65,10 @@
         </div>
     </section>
 
-    <!-- Selection + Order Form -->
     <section id="shop" class="py-16 bg-gray-100">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-10 items-start">
                 
-                <!-- Left Sticky Preview & Selector -->
                 <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
                     <div class="bg-white p-6 rounded-3xl shadow">
                         <h3 class="text-lg font-semibold mb-4 text-gray-700">1. Select Sport / Category</h3>
@@ -86,7 +80,6 @@
                     </div>
                 </div>
 
-                <!-- Right Form Fields -->
                 <div class="lg:col-span-7">
                     <h2 class="text-4xl font-bold mb-8">3. Place Your Order</h2>
                     <div class="bg-white rounded-3xl shadow p-8 transition-opacity duration-300" id="order-controls">
@@ -127,14 +120,12 @@
         </div>
     </section>
 
-    <!-- QR Code Section -->
     <section class="py-20 bg-white text-center">
         <h2 class="text-4xl font-bold mb-6">Scan to Order</h2>
         <p class="max-w-md mx-auto mb-8 text-gray-600 px-6">Print this QR code or share it for direct access to your merch stand</p>
         <div class="inline-block p-8 bg-white rounded-3xl shadow-xl border border-gray-100" id="qrcode"></div>
     </section>
 
-    <!-- ADMIN PANEL -->
     <div class="fixed bottom-4 right-4 z-50">
         <button onclick="toggleAdmin()" class="bg-gray-800 text-white text-xs px-3 py-2 rounded-full opacity-30 hover:opacity-100 transition shadow">⚙️ Admin</button>
     </div>
@@ -158,7 +149,6 @@
         </div>
     </div>
 
-    <!-- Core CDNs -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
@@ -409,7 +399,6 @@
                 return alert("Please provide your first and last name.");
             }
 
-            // Split the data into separate arrays for clean columns
             let sports = [];
             let colors = [];
             let qtys = [];
@@ -423,10 +412,12 @@
                 sizes.push(item.size);
             });
 
-            const sportString = sports.join(", ");
-            const colorString = colors.join(", ");
-            const qtyString = qtys.join(", ");
-            const sizeString = sizes.join(", ");
+            // UPDATED: Joined with "\n" so they display vertically on separate lines
+            const sportString = sports.join("\n");
+            const colorString = colors.join("\n");
+            const qtyString = qtys.join("\n");
+            const sizeString = sizes.join("\n");
+            const itemSummaryString = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join("\n");
 
             try {
                 await emailjs.send("service_bpxnnou", "template_nxa9obl", {
@@ -437,14 +428,15 @@
                     color: colorString,
                     qty: qtyString,
                     size: sizeString,
+                    order_details: itemSummaryString,
                     total_amount: data.total.toFixed(2)
                 });
             } catch(e) {
                 console.log("Email tracking fallback triggered; proceeding directly to Venmo.");
             }
 
-            const itemSummaryString = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
-            const note = encodeURIComponent(`Pit Happens: ${data.name} (${itemSummaryString})`);
+            const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
+            const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
             const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
 
             alert(`✅ Order config compiled!\n\nThank you ${data.name}!\nTotal Amount Due: $${data.total.toFixed(2)}\n\nOpening Venmo...`);
