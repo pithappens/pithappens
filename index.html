@@ -444,6 +444,11 @@
             const qtyString = qtys.join("\n");
             const sizeString = sizes.join("\n");
 
+            // Build the Venmo URL FIRST
+            const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
+            const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
+            const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
+
             try {
                 await emailjs.send("service_bpxnnou", "template_nxa9obl", {
                     to_email: "pithappens26@gmail.com",
@@ -459,12 +464,10 @@
                 console.log("Email tracking fallback triggered; proceeding directly to Venmo.");
             }
 
-            const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
-            const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
-            const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
-
-            alert(`✅ Order config compiled!\n\nThank you ${data.name}!\nTotal Amount Due: $${data.total.toFixed(2)}\n\nOpening Venmo...`);
-            window.open(venmoUrl, '_blank');
+            alert(`✅ Order config compiled!\n\nThank you ${data.name}!\nTotal Amount Due: $${data.total.toFixed(2)}\n\nRedirecting to Venmo...`);
+            
+            // Redirect current window instead of opening a popup
+            window.location.href = venmoUrl;
         }
 
         window.onload = () => {
