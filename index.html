@@ -10,7 +10,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', system_ui, sans-serif; }
         .shirt-bg { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); }
-        /* Hide default radio buttons for custom styling */
         input[type="radio"] { display: none; }
         input[type="radio"]:checked + label {
             background-color: #6d28d9; 
@@ -21,7 +20,6 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -34,7 +32,6 @@
         </div>
     </header>
 
-    <!-- Public Counter -->
     <div class="bg-yellow-400 py-4 text-center font-medium shadow-sm">
         <div class="max-w-6xl mx-auto px-6">
             <span class="text-lg">🔥 <span id="batch-count" class="font-bold text-3xl">12</span> shirts since last bulk order</span>
@@ -42,7 +39,6 @@
         </div>
     </div>
 
-    <!-- Hero -->
     <section class="shirt-bg text-white py-20">
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -61,7 +57,6 @@
                 <img id="main-shirt" src="https://i.postimg.cc/R0thSzgF/Pit.jpg" 
                      class="w-full max-w-md drop-shadow-2xl rounded-3xl h-auto transition-all duration-300" alt="Pit Happens Tee">
                 
-                <!-- Dynamic Coming Soon Badge -->
                 <div id="coming-soon-badge" class="hidden mt-6 bg-gray-800 text-yellow-400 w-full max-w-md text-center py-3 rounded-2xl font-bold uppercase tracking-widest shadow-lg border border-gray-700">
                     Coming Soon
                 </div>
@@ -69,12 +64,10 @@
         </div>
     </section>
 
-    <!-- Selection + Order Form -->
     <section id="shop" class="py-16 bg-gray-100 flex-grow">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-10 items-start">
                 
-                <!-- Left Sticky Preview & Selector -->
                 <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
                     <div class="bg-white p-6 rounded-3xl shadow">
                         <h3 class="text-lg font-semibold mb-4 text-gray-700">1. Select Sport / Category</h3>
@@ -86,7 +79,6 @@
                     </div>
                 </div>
 
-                <!-- Right Form Fields -->
                 <div class="lg:col-span-7">
                     <h2 class="text-4xl font-bold mb-8">3. Place Your Order</h2>
                     <div class="bg-white rounded-3xl shadow p-8 transition-opacity duration-300" id="order-controls">
@@ -127,14 +119,12 @@
         </div>
     </section>
 
-    <!-- QR Code Section -->
     <section class="py-20 bg-white text-center">
         <h2 class="text-4xl font-bold mb-6">Scan to Order</h2>
         <p class="max-w-md mx-auto mb-8 text-gray-600 px-6">Print this QR code or share it for direct access to your merch stand</p>
         <div class="inline-block p-8 bg-white rounded-3xl shadow-xl border border-gray-100" id="qrcode"></div>
     </section>
 
-    <!-- Legal Disclaimer Footer -->
     <footer class="bg-gray-900 text-gray-400 py-8 text-center text-xs mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p class="mb-2 uppercase tracking-wider font-semibold text-gray-500">Legal Disclaimer</p>
@@ -150,7 +140,6 @@
         </div>
     </footer>
 
-    <!-- ADMIN PANEL -->
     <div class="fixed bottom-4 right-4 z-50">
         <button onclick="toggleAdmin()" class="bg-gray-800 text-white text-xs px-3 py-2 rounded-full opacity-30 hover:opacity-100 transition shadow">⚙️ Admin</button>
     </div>
@@ -174,20 +163,21 @@
         </div>
     </div>
 
-    <!-- Core CDNs -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
-        // --- 1. PRODUCT CATALOG DATA ---
         const catalog = {
             "Football": [
-                { name: "Purple Option", desc: "Game Day Purple", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Game Day Purple Edition", iconBg: "bg-purple-700", isAvailable: true },
-                { name: "White Out Edition", desc: "Coming soon", image: "https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg", heroTitle: "White Out Edition", previewTxt: "White out version coming soon", iconBg: "bg-white border-gray-300", isAvailable: false },
-                { name: "Black Out Edition", desc: "Coming soon", image: "https://i.postimg.cc/vBFjfNCn/black-pit-happens.jpg", heroTitle: "Black Out Edition", previewTxt: "Black out version coming soon", iconBg: "bg-black", isAvailable: false }
+                { name: "12th Man Purple", desc: "Game Day Purple", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Game Day Purple Edition", iconBg: "bg-purple-700", isAvailable: true },
+                { name: "White Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg", heroTitle: "White Out Edition", previewTxt: "Viewing: White Out Version Coming Soon", iconBg: "bg-white border-gray-300", isAvailable: false },
+                { name: "Black Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/vBFjfNCn/black-pit-happens.jpg", heroTitle: "Black Out Edition", previewTxt: "Viewing: Black Out Version Coming Soon", iconBg: "bg-black", isAvailable: false }
             ],
             "Basketball": [
                 { name: "Hans Hans", desc: "Basketball Edition", image: "https://i.postimg.cc/pVnVqLYw/image.png", heroTitle: "", previewTxt: "Viewing: Hans Hans Basketball Tee", iconBg: "bg-orange-500", isAvailable: false }
+            ],
+            "Bowling": [
+                { name: "Panther Strike Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/4c1d95/ffffff?text=Bowling+Edition+Coming+Soon", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Official Bowling Edition", iconBg: "bg-purple-900", isAvailable: false }
             ],
             "Baseball": [
                 { name: "Baseball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Baseball Edition Placeholder", iconBg: "bg-red-600", isAvailable: false }
@@ -196,12 +186,10 @@
                 { name: "Lacrosse Tee", desc: "Official Lacrosse Edition", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Official Lacrosse Tee", iconBg: "bg-green-600", isAvailable: false }
             ],
             "Soccer": [
-                { name: "Soccer Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Soccer+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Soccer Edition Placeholder", iconBg: "bg-blue-500", isAvailable: false }
-            ],
-            "Volleyball": [
-                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/6Q3zNSMQ/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false }
+                { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false }
             ],
             "Fan Favorites": [
+                { name: "Pit Happens Hoodie", desc: "Coming Soon", image: "sweatshirt.jpg", heroTitle: "Classic Hoodie", previewTxt: "Viewing: Sweatshirt Edition", iconBg: "bg-purple-800", isAvailable: false },
                 { name: "Special Edition", desc: "Where Pit Happens", image: "https://i.postimg.cc/VkJHTw8T/price-hill.jpg", heroTitle: "", previewTxt: "Viewing: Special Edition Price Hill", iconBg: "bg-gray-400", isAvailable: false },
                 { name: "Fan Favorite", desc: "Classic Design", image: "https://i.postimg.cc/zfRw5PLc/image-(1).png", heroTitle: "", previewTxt: "Viewing: Fan Favorite Tee", iconBg: "bg-yellow-400", isAvailable: false }
             ]
@@ -209,19 +197,16 @@
 
         let currentSport = "Football";
         let currentStyleIndex = 0;
-
         let totalShirts = localStorage.getItem('pit_totalShirts') ? parseInt(localStorage.getItem('pit_totalShirts')) : 47;
         let batchShirts = localStorage.getItem('pit_batchShirts') ? parseInt(localStorage.getItem('pit_batchShirts')) : 12;
 
         (function() {
-            emailjs.init("leFWeb3f3mOFMCdZU"); // Your Public Key
+            emailjs.init("leFWeb3f3mOFMCdZU"); 
         })();
 
-        // --- 2. RENDER UI FUNCTIONS ---
         function initCatalog() {
             const sportContainer = document.getElementById('sport-container');
             sportContainer.innerHTML = '';
-            
             Object.keys(catalog).forEach((sport, index) => {
                 const checked = index === 0 ? 'checked' : '';
                 sportContainer.innerHTML += `
@@ -239,12 +224,9 @@
         function selectSport(sportName) {
             currentSport = sportName;
             currentStyleIndex = 0; 
-            
             const styleContainer = document.getElementById('style-container');
             styleContainer.innerHTML = '';
-            
             const styles = catalog[currentSport];
-            
             styles.forEach((style, index) => {
                 styleContainer.innerHTML += `
                     <button onclick="selectStyle(${index})" id="btn-style-${index}" class="w-full text-left py-3 px-4 border border-gray-300 rounded-xl font-medium bg-white text-gray-700 hover:bg-gray-50 transition text-sm flex items-center justify-between">
@@ -255,14 +237,12 @@
                     </button>
                 `;
             });
-
             selectStyle(0);
         }
 
         function selectStyle(index) {
             currentStyleIndex = index;
             const styleData = catalog[currentSport][index];
-            
             document.getElementById('main-shirt').src = styleData.image;
             document.getElementById('variant-description').textContent = styleData.previewTxt;
             
@@ -300,7 +280,7 @@
             } else {
                 controls.classList.add('opacity-40', 'pointer-events-none');
                 comingSoonBadge.classList.remove('hidden');
-                submitBtn.textContent = "Shirt Coming Soon";
+                submitBtn.textContent = "Style Coming Soon";
                 submitBtn.classList.remove('bg-purple-700', 'hover:bg-purple-800');
                 submitBtn.classList.add('bg-gray-400');
             }
@@ -322,6 +302,40 @@
             updateCounters();
             alert("✅ Counters updated on this device!");
             toggleAdmin();
+        }
+
+        function handleStyleChange(selectElement) {
+            const row = selectElement.closest('.item-row');
+            const sizeSelect = row.querySelector('.size-select');
+            const selectedStyle = selectElement.value;
+            const currentSize = sizeSelect.value;
+            
+            let optionsHtml = `
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            `;
+            
+            if (selectedStyle === 'Football - 12th Man Purple') {
+                optionsHtml += `<option value="XL" disabled>XL (SOLD OUT)</option>`;
+            } else {
+                optionsHtml += `<option value="XL">XL</option>`;
+            }
+            
+            optionsHtml += `
+                <option value="XXL">XXL (+$2.00)</option>
+                <option value="XXXL">XXXL (+$2.00)</option>
+            `;
+            
+            sizeSelect.innerHTML = optionsHtml;
+            
+            if (currentSize === 'XL' && selectedStyle === 'Football - 12th Man Purple') {
+                sizeSelect.value = 'L';
+            } else {
+                sizeSelect.value = currentSize;
+            }
+            
+            updateTotal();
         }
 
         function addItemRow() { 
@@ -353,7 +367,7 @@
                 
                 <div class="mb-4">
                     <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Style Selection</label>
-                    <select class="style-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-purple-600" onchange="updateTotal()">
+                    <select class="style-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-purple-600" onchange="handleStyleChange(this)">
                         ${optionsHtml}
                     </select>
                 </div>
@@ -364,8 +378,8 @@
                         <select class="size-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-purple-600" onchange="updateTotal()">
                             <option value="S">S</option>
                             <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL" selected>XL</option>
+                            <option value="L" selected>L</option>
+                            <option value="XL" disabled>XL (SOLD OUT)</option>
                             <option value="XXL">XXL (+$2.00)</option>
                             <option value="XXXL">XXXL (+$2.00)</option>
                         </select>
@@ -381,7 +395,8 @@
                 </div>
             `;
             container.appendChild(row);
-            updateTotal();
+            
+            handleStyleChange(row.querySelector('.style-select'));
         }
 
         function updateTotal() { 
@@ -438,13 +453,11 @@
                 sizes.push(item.size);
             });
 
-            // Joined with "\n" so they display vertically on separate lines in Google Sheets
             const sportString = sports.join("\n");
             const colorString = colors.join("\n");
             const qtyString = qtys.join("\n");
             const sizeString = sizes.join("\n");
 
-            // Build the Venmo URL FIRST
             const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
             const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
             const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
@@ -465,8 +478,6 @@
             }
 
             alert(`✅ Order config compiled!\n\nThank you ${data.name}!\nTotal Amount Due: $${data.total.toFixed(2)}\n\nRedirecting to Venmo...`);
-            
-            // Redirect current window instead of opening a popup
             window.location.href = venmoUrl;
         }
 
