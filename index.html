@@ -177,7 +177,7 @@
                 { name: "Hans Hans", desc: "Basketball Edition", image: "https://i.postimg.cc/pVnVqLYw/image.png", heroTitle: "", previewTxt: "Viewing: Hans Hans Basketball Tee", iconBg: "bg-orange-500", isAvailable: false }
             ],
             "Bowling": [
-                { name: "Panther Strike Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/4c1d95/ffffff?text=Bowling+Edition+Coming+Soon", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Official Bowling Edition", iconBg: "bg-purple-900", isAvailable: false }
+                { name: "Panther Strike Tee", desc: "Coming Soon", image: "https://i.postimg.cc/rw5gK6xj/69C3D1EB-942C-4E10-834C-3D525197F528.jpg", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Official Bowling Edition", iconBg: "bg-purple-900", isAvailable: false }
             ],
             "Baseball": [
                 { name: "Baseball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Baseball Edition Placeholder", iconBg: "bg-red-600", isAvailable: false }
@@ -189,7 +189,7 @@
                 { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "https://i.postimg.cc/NfMx79TR/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false }
             ],
             "Volleyball": [
-                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/rw5gK6xj/69C3D1EB-942C-4E10-834C-3D525197F528.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false }
+                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/zBGqzbxr/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false }
             ],
             "Fan Favorites": [
                 { name: "Pit Happens Hoodie", desc: "Coming Soon", image: "https://i.postimg.cc/JhcJWMZw/sweatshirt.jpg", heroTitle: "Classic Hoodie", previewTxt: "Viewing: Sweatshirt Edition", iconBg: "bg-purple-800", isAvailable: false },
@@ -409,7 +409,10 @@
                 if (isNaN(qty) || qty < 1) qty = 1; 
                 
                 const size = row.querySelector('.size-select').value;
-                const price = (size === 'XXL' || size === 'XXXL') ? 27 : 25;
+                const style = row.querySelector('.style-select').value;
+                
+                let basePrice = (style === 'Fan Favorites - Pit Happens Hoodie') ? 45 : 25;
+                const price = (size === 'XXL' || size === 'XXXL') ? basePrice + 2 : basePrice;
                 
                 const lineTotal = price * qty;
                 row.querySelector('.price-display').textContent = '$' + lineTotal.toFixed(2);
@@ -432,7 +435,12 @@
                 if (qty > 0) items.push({style, size, qty});
             });
             
-            const total = items.reduce((sum, item) => sum + ((item.size === 'XXL' || item.size === 'XXXL') ? 27 : 25) * item.qty, 0);
+            const total = items.reduce((sum, item) => {
+                let basePrice = (item.style === 'Fan Favorites - Pit Happens Hoodie') ? 45 : 25;
+                let finalPrice = (item.size === 'XXL' || item.size === 'XXXL') ? basePrice + 2 : basePrice;
+                return sum + (finalPrice * item.qty);
+            }, 0);
+            
             return {name, email, items, total};
         }
 
