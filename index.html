@@ -44,17 +44,17 @@
             <div>
                 <h2 class="text-6xl font-bold leading-none tracking-tighter mb-4">
                     PIT HAPPENS<br>
-                    <span id="hero-subtitle" class="text-purple-200 text-4xl block mt-2 transition-opacity duration-300">12th Man Edition</span>
+                    <span id="hero-subtitle" class="text-purple-200 text-4xl block mt-2 transition-opacity duration-300">Price Hill Pride</span>
                 </h2>
                 <p class="text-xl text-purple-100 mb-2">Premium tees for Price Hill Panthers fans.</p>
-                <p id="variant-description" class="text-sm text-purple-300 italic mb-8">Viewing: Game Day Purple Edition</p>
+                <p id="variant-description" class="text-sm text-purple-300 italic mb-8">Viewing: Price Hill Pride Edition</p>
                 <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" 
                         class="px-8 py-4 bg-white text-purple-700 rounded-3xl font-semibold text-lg hover:scale-105 transition shadow-lg">
                     Order Now
                 </button>
             </div>
             <div class="flex flex-col items-center justify-center">
-                <img id="main-shirt" src="https://i.postimg.cc/R0thSzgF/Pit.jpg" 
+                <img id="main-shirt" src="https://i.postimg.cc/J7yBhRc8/price-hill.jpg" 
                      class="w-full max-w-md drop-shadow-2xl rounded-3xl h-auto transition-all duration-300" alt="Pit Happens Tee">
                 
                 <div id="coming-soon-badge" class="hidden mt-6 bg-gray-800 text-yellow-400 w-full max-w-md text-center py-3 rounded-2xl font-bold uppercase tracking-widest shadow-lg border border-gray-700">
@@ -167,38 +167,39 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
+        // Fan Favorites is moved to the top so it loads first by default
         const catalog = {
+            "Fan Favorites": [
+                { name: "Price Hill Pride", desc: "Available Now", image: "https://i.postimg.cc/J7yBhRc8/price-hill.jpg", heroTitle: "Price Hill Pride", previewTxt: "Viewing: Price Hill Pride Edition", iconBg: "bg-purple-600", isAvailable: true, badgeText: "" },
+                { name: "Pit Happens Hoodie", desc: "Coming Soon", image: "https://i.postimg.cc/JhcJWMZw/sweatshirt.jpg", heroTitle: "Classic Hoodie", previewTxt: "Viewing: Sweatshirt Edition", iconBg: "bg-purple-800", isAvailable: false, badgeText: "Coming Soon" },
+                { name: "Fan Favorite", desc: "Classic Design", image: "https://i.postimg.cc/zfRw5PLc/image-(1).png", heroTitle: "", previewTxt: "Viewing: Fan Favorite Tee", iconBg: "bg-yellow-400", isAvailable: false, badgeText: "Coming Soon" }
+            ],
             "Football": [
-                { name: "12th Man Purple", desc: "Game Day Purple", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Game Day Purple Edition", iconBg: "bg-purple-700", isAvailable: true },
-                { name: "White Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg", heroTitle: "White Out Edition", previewTxt: "Viewing: White Out Version Coming Soon", iconBg: "bg-white border-gray-300", isAvailable: false },
-                { name: "Black Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/vBFjfNCn/black-pit-happens.jpg", heroTitle: "Black Out Edition", previewTxt: "Viewing: Black Out Version Coming Soon", iconBg: "bg-black", isAvailable: false }
+                { name: "12th Man Purple", desc: "Sold Out", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Game Day Purple Edition", iconBg: "bg-purple-700", isAvailable: false, badgeText: "Sold Out" },
+                { name: "White Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg", heroTitle: "White Out Edition", previewTxt: "Viewing: White Out Version Coming Soon", iconBg: "bg-white border-gray-300", isAvailable: false, badgeText: "Coming Soon" },
+                { name: "Black Out Edition", desc: "Coming Soon", image: "https://i.postimg.cc/vBFjfNCn/black-pit-happens.jpg", heroTitle: "Black Out Edition", previewTxt: "Viewing: Black Out Version Coming Soon", iconBg: "bg-black", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Basketball": [
-                { name: "Hans Hans", desc: "Basketball Edition", image: "https://i.postimg.cc/pVnVqLYw/image.png", heroTitle: "", previewTxt: "Viewing: Hans Hans Basketball Tee", iconBg: "bg-orange-500", isAvailable: false }
+                { name: "Hans Hans", desc: "Basketball Edition", image: "https://i.postimg.cc/pVnVqLYw/image.png", heroTitle: "", previewTxt: "Viewing: Hans Hans Basketball Tee", iconBg: "bg-orange-500", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Bowling": [
-                { name: "Panther Strike Tee", desc: "Coming Soon", image: "https://i.postimg.cc/rw5gK6xj/69C3D1EB-942C-4E10-834C-3D525197F528.jpg", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Official Bowling Edition", iconBg: "bg-purple-900", isAvailable: false }
+                { name: "Panther Strike Tee", desc: "Coming Soon", image: "https://i.postimg.cc/rw5gK6xj/69C3D1EB-942C-4E10-834C-3D525197F528.jpg", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Official Bowling Edition", iconBg: "bg-purple-900", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Baseball": [
-                { name: "Baseball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Baseball Edition Placeholder", iconBg: "bg-red-600", isAvailable: false }
+                { name: "Baseball Tee", desc: "Coming Soon", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Baseball Edition Placeholder", iconBg: "bg-red-600", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Lacrosse": [
-                { name: "Lacrosse Tee", desc: "Official Lacrosse Edition", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Official Lacrosse Tee", iconBg: "bg-green-600", isAvailable: false }
+                { name: "Lacrosse Tee", desc: "Official Lacrosse Edition", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Official Lacrosse Tee", iconBg: "bg-green-600", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Soccer": [
-                { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "https://i.postimg.cc/NfMx79TR/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false }
+                { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "https://i.postimg.cc/NfMx79TR/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Volleyball": [
-                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/zBGqzbxr/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false }
-            ],
-            "Fan Favorites": [
-                { name: "Pit Happens Hoodie", desc: "Coming Soon", image: "https://i.postimg.cc/JhcJWMZw/sweatshirt.jpg", heroTitle: "Classic Hoodie", previewTxt: "Viewing: Sweatshirt Edition", iconBg: "bg-purple-800", isAvailable: false },
-                { name: "Special Edition", desc: "Where Pit Happens", image: "https://i.postimg.cc/VkJHTw8T/price-hill.jpg", heroTitle: "", previewTxt: "Viewing: Special Edition Price Hill", iconBg: "bg-gray-400", isAvailable: false },
-                { name: "Fan Favorite", desc: "Classic Design", image: "https://i.postimg.cc/zfRw5PLc/image-(1).png", heroTitle: "", previewTxt: "Viewing: Fan Favorite Tee", iconBg: "bg-yellow-400", isAvailable: false }
+                { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/zBGqzbxr/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Coming Soon" }
             ]
         };
 
-        let currentSport = "Football";
+        let currentSport = Object.keys(catalog)[0];
         let currentStyleIndex = 0;
         let totalShirts = localStorage.getItem('pit_totalShirts') ? parseInt(localStorage.getItem('pit_totalShirts')) : 47;
         let batchShirts = localStorage.getItem('pit_batchShirts') ? parseInt(localStorage.getItem('pit_batchShirts')) : 12;
@@ -210,8 +211,9 @@
         function initCatalog() {
             const sportContainer = document.getElementById('sport-container');
             sportContainer.innerHTML = '';
+            let isFirst = true;
             Object.keys(catalog).forEach((sport, index) => {
-                const checked = index === 0 ? 'checked' : '';
+                const checked = isFirst ? 'checked' : '';
                 sportContainer.innerHTML += `
                     <div>
                         <input type="radio" id="sport-${index}" name="sport" value="${sport}" onchange="selectSport('${sport}')" ${checked}>
@@ -220,8 +222,9 @@
                         </label>
                     </div>
                 `;
+                isFirst = false;
             });
-            selectSport("Football");
+            selectSport(Object.keys(catalog)[0]);
         }
 
         function selectSport(sportName) {
@@ -282,8 +285,9 @@
                 submitBtn.classList.add('bg-purple-700', 'hover:bg-purple-800');
             } else {
                 controls.classList.add('opacity-40', 'pointer-events-none');
+                comingSoonBadge.textContent = styleData.badgeText || "Coming Soon";
                 comingSoonBadge.classList.remove('hidden');
-                submitBtn.textContent = "Style Coming Soon";
+                submitBtn.textContent = (styleData.badgeText === "Sold Out") ? "Item Sold Out" : "Style Coming Soon";
                 submitBtn.classList.remove('bg-purple-700', 'hover:bg-purple-800');
                 submitBtn.classList.add('bg-gray-400');
             }
@@ -310,33 +314,20 @@
         function handleStyleChange(selectElement) {
             const row = selectElement.closest('.item-row');
             const sizeSelect = row.querySelector('.size-select');
-            const selectedStyle = selectElement.value;
             const currentSize = sizeSelect.value;
             
+            // Standard size generation since Sold Out items no longer appear here at all
             let optionsHtml = `
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
-            `;
-            
-            if (selectedStyle === 'Football - 12th Man Purple') {
-                optionsHtml += `<option value="XL" disabled>XL (SOLD OUT)</option>`;
-            } else {
-                optionsHtml += `<option value="XL">XL</option>`;
-            }
-            
-            optionsHtml += `
+                <option value="XL">XL</option>
                 <option value="XXL">XXL (+$2.00)</option>
                 <option value="XXXL">XXXL (+$2.00)</option>
             `;
             
             sizeSelect.innerHTML = optionsHtml;
-            
-            if (currentSize === 'XL' && selectedStyle === 'Football - 12th Man Purple') {
-                sizeSelect.value = 'L';
-            } else {
-                sizeSelect.value = currentSize;
-            }
+            sizeSelect.value = currentSize || 'L';
             
             updateTotal();
         }
@@ -382,7 +373,7 @@
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L" selected>L</option>
-                            <option value="XL" disabled>XL (SOLD OUT)</option>
+                            <option value="XL">XL</option>
                             <option value="XXL">XXL (+$2.00)</option>
                             <option value="XXXL">XXXL (+$2.00)</option>
                         </select>
@@ -411,7 +402,8 @@
                 const size = row.querySelector('.size-select').value;
                 const style = row.querySelector('.style-select').value;
                 
-                let basePrice = (style === 'Fan Favorites - Pit Happens Hoodie') ? 45 : 25;
+                // Bulletproof check for Hoodie price
+                let basePrice = style.includes('Hoodie') ? 45 : 25;
                 const price = (size === 'XXL' || size === 'XXXL') ? basePrice + 2 : basePrice;
                 
                 const lineTotal = price * qty;
@@ -436,7 +428,8 @@
             });
             
             const total = items.reduce((sum, item) => {
-                let basePrice = (item.style === 'Fan Favorites - Pit Happens Hoodie') ? 45 : 25;
+                // Same bulletproof check for Venmo total
+                let basePrice = item.style.includes('Hoodie') ? 45 : 25;
                 let finalPrice = (item.size === 'XXL' || item.size === 'XXXL') ? basePrice + 2 : basePrice;
                 return sum + (finalPrice * item.qty);
             }, 0);
@@ -469,7 +462,7 @@
             const qtyString = qtys.join("\n");
             const sizeString = sizes.join("\n");
 
-            const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
+            const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Fan Favorites - ', '')})`).join(", ");
             const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
             const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
 
