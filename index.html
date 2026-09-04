@@ -167,7 +167,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
-        // Fan Favorites is moved to the top so it loads first by default
         const catalog = {
             "Fan Favorites": [
                 { name: "Price Hill Pride", desc: "Available Now", image: "https://i.postimg.cc/J7yBhRc8/price-hill.jpg", heroTitle: "Price Hill Pride", previewTxt: "Viewing: Price Hill Pride Edition", iconBg: "bg-purple-600", isAvailable: true, badgeText: "" },
@@ -192,7 +191,7 @@
                 { name: "Lacrosse Tee", desc: "Official Lacrosse Edition", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Official Lacrosse Tee", iconBg: "bg-green-600", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Soccer": [
-                { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "https://i.postimg.cc/NfMx79TR/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false, badgeText: "Coming Soon" }
+                { name: "PITch HAPPENS Tee", desc: "Coming Soon", image: "https://i.postimg.cc/vHsq72mZ/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: PITch HAPPENS Edition", iconBg: "bg-purple-600", isAvailable: false, badgeText: "Coming Soon" }
             ],
             "Volleyball": [
                 { name: "Volleyball Tee", desc: "Official Volleyball Edition", image: "https://i.postimg.cc/zBGqzbxr/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Official Volleyball Tee", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Coming Soon" }
@@ -316,7 +315,6 @@
             const sizeSelect = row.querySelector('.size-select');
             const currentSize = sizeSelect.value;
             
-            // Standard size generation since Sold Out items no longer appear here at all
             let optionsHtml = `
                 <option value="S">S</option>
                 <option value="M">M</option>
@@ -402,7 +400,6 @@
                 const size = row.querySelector('.size-select').value;
                 const style = row.querySelector('.style-select').value;
                 
-                // Bulletproof check for Hoodie price
                 let basePrice = style.includes('Hoodie') ? 45 : 25;
                 const price = (size === 'XXL' || size === 'XXXL') ? basePrice + 2 : basePrice;
                 
@@ -428,7 +425,6 @@
             });
             
             const total = items.reduce((sum, item) => {
-                // Same bulletproof check for Venmo total
                 let basePrice = item.style.includes('Hoodie') ? 45 : 25;
                 let finalPrice = (item.size === 'XXL' || item.size === 'XXXL') ? basePrice + 2 : basePrice;
                 return sum + (finalPrice * item.qty);
