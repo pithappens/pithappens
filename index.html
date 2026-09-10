@@ -9,33 +9,34 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', system_ui, sans-serif; }
-        .shirt-bg { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); }
+        /* Orange to Black Gradient */
+        .shirt-bg { background: linear-gradient(135deg, #ea580c 0%, #000000 100%); }
         input[type="radio"] { display: none; }
         input[type="radio"]:checked + label {
-            background-color: #6d28d9; 
+            background-color: #ea580c; /* Orange */
             color: white;
-            border-color: #6d28d9;
+            border-color: #ea580c;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b-4 border-orange-600">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-purple-700 rounded-xl flex items-center justify-center text-white font-bold text-2xl">P</div>
+                <div class="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">P</div>
                 <div>
                     <h1 class="text-2xl font-bold">Official Pit Happens Apparel</h1>
-                    <p class="text-xs text-gray-500 -mt-1">Price Hill Pride</p>
+                    <p class="text-xs text-gray-500 -mt-1">Grit Over Gift</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="bg-yellow-400 py-4 text-center font-medium shadow-sm">
+    <div class="bg-orange-500 py-4 text-center font-medium shadow-sm text-white">
         <div class="max-w-6xl mx-auto px-6">
             <span class="text-lg">🔥 <span id="batch-count" class="font-bold text-3xl">12</span> shirts since last bulk order</span>
-            <span class="text-sm ml-4">(We order every 50)</span>
+            <span class="text-sm ml-4 text-orange-100">(We order every 50)</span>
         </div>
     </div>
 
@@ -44,20 +45,20 @@
             <div>
                 <h2 class="text-6xl font-bold leading-none tracking-tighter mb-4">
                     PIT HAPPENS<br>
-                    <span id="hero-subtitle" class="text-purple-200 text-4xl block mt-2 transition-opacity duration-300">White Out Edition</span>
+                    <span id="hero-subtitle" class="text-orange-400 text-4xl block mt-2 transition-opacity duration-300">Stand My Ground</span>
                 </h2>
-                <p class="text-xl text-purple-100 mb-2">Premium tees for Price Hill Panthers fans.</p>
-                <p id="variant-description" class="text-sm text-purple-300 italic mb-8">Viewing: White Out Edition</p>
+                <p class="text-xl text-gray-300 mb-2">Premium tees for Pit Happens fans.</p>
+                <p id="variant-description" class="text-sm text-gray-400 italic mb-8">Viewing: Stand My Ground Edition</p>
                 <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" 
-                        class="px-8 py-4 bg-white text-purple-700 rounded-3xl font-semibold text-lg hover:scale-105 transition shadow-lg">
+                        class="px-8 py-4 bg-white text-orange-600 rounded-3xl font-semibold text-lg hover:scale-105 transition shadow-lg">
                     Order Now
                 </button>
             </div>
             <div class="flex flex-col items-center justify-center relative">
-                <img id="main-shirt" src="https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg" 
+                <img id="main-shirt" src="https://i.postimg.cc/FzWCF4GL/blackout.jpg" 
                      class="w-full max-w-md drop-shadow-2xl rounded-3xl h-auto transition-all duration-300" alt="Pit Happens Tee">
                 
-                <div id="coming-soon-badge" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-red-500 w-3/4 max-w-sm text-center py-4 rounded-2xl font-bold text-xl uppercase tracking-widest shadow-2xl border-2 border-red-500 z-10">
+                <div id="coming-soon-badge" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-red-500 w-3/4 max-w-sm text-center py-4 rounded-2xl font-bold text-xl uppercase tracking-widest shadow-2xl border-2 border-red-500 z-10">
                     Unavailable
                 </div>
             </div>
@@ -85,31 +86,31 @@
                         <div class="grid grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium mb-2 text-gray-700">First Name</label>
-                                <input id="first-name" type="text" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-purple-600" placeholder="Joe">
+                                <input id="first-name" type="text" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-orange-500" placeholder="Joe">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2 text-gray-700">Last Name</label>
-                                <input id="last-name" type="text" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-purple-600" placeholder="Panther">
+                                <input id="last-name" type="text" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-orange-500" placeholder="Fan">
                             </div>
                         </div>
 
                         <div class="mt-6">
                             <label class="block text-sm font-medium mb-2 text-gray-700">Email (Receipt & Confirmation)</label>
-                            <input id="email" type="email" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-purple-600" placeholder="you@email.com">
+                            <input id="email" type="email" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-orange-500" placeholder="you@email.com">
                         </div>
 
                         <div id="items-container" class="mt-8"></div>
 
-                        <button onclick="addItemRow()" id="add-item-btn" class="mt-4 w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 font-medium hover:border-purple-600 hover:text-purple-600 transition">
+                        <button onclick="addItemRow()" id="add-item-btn" class="mt-4 w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 font-medium hover:border-orange-600 hover:text-orange-600 transition">
                             <i class="fa-solid fa-plus mr-2"></i> Add Another Shirt Size
                         </button>
 
                         <div class="mt-8 pt-8 border-t border-gray-200 flex justify-between text-2xl font-bold">
                             <div class="text-gray-800">Total Due</div>
-                            <div id="total-display" class="font-mono text-purple-700">$0.00</div>
+                            <div id="total-display" class="font-mono text-orange-600">$0.00</div>
                         </div>
 
-                        <button onclick="submitOrder()" id="submit-btn" class="mt-8 w-full bg-purple-700 hover:bg-purple-800 text-white py-6 rounded-3xl text-xl font-semibold shadow-lg transition transform hover:-translate-y-0.5">
+                        <button onclick="submitOrder()" id="submit-btn" class="mt-8 w-full bg-orange-600 hover:bg-orange-700 text-white py-6 rounded-3xl text-xl font-semibold shadow-lg transition transform hover:-translate-y-0.5">
                             Review Order & Pay @pithappens
                         </button>
                     </div>
@@ -125,7 +126,7 @@
         <div class="inline-block p-8 bg-white rounded-3xl shadow-xl border border-gray-100" id="qrcode"></div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-xs mt-auto">
+    <footer class="bg-black text-gray-400 py-8 text-center text-xs mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p class="mb-2 uppercase tracking-wider font-semibold text-gray-500">Legal Disclaimer</p>
             <p>
@@ -137,6 +138,18 @@
         </div>
     </footer>
 
+    <!-- Background Music Player -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="fixed bottom-4 left-4 z-50">
+        <button onclick="toggleMusic()" id="music-btn" class="bg-gray-800 text-white text-xs px-4 py-2 rounded-full opacity-60 hover:opacity-100 transition shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-volume-xmark"></i> Music Off
+        </button>
+    </div>
+
+    <!-- Admin Panel Controls -->
     <div class="fixed bottom-4 right-4 z-50">
         <button onclick="toggleAdmin()" class="bg-gray-800 text-white text-xs px-3 py-2 rounded-full opacity-30 hover:opacity-100 transition shadow">⚙️ Admin</button>
     </div>
@@ -150,13 +163,13 @@
         <div class="space-y-4">
             <div>
                 <label class="block text-xs font-semibold text-gray-600 mb-1">Total Shirts Ordered</label>
-                <input id="admin-total" type="number" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-purple-600">
+                <input id="admin-total" type="number" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500">
             </div>
             <div>
                 <label class="block text-xs font-semibold text-gray-600 mb-1">Shirts Since Last Bulk Order</label>
-                <input id="admin-batch" type="number" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-purple-600">
+                <input id="admin-batch" type="number" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500">
             </div>
-            <button onclick="saveAdminChanges()" class="w-full bg-purple-700 hover:bg-purple-800 text-white py-3 rounded-2xl font-medium transition">Save Locally</button>
+            <button onclick="saveAdminChanges()" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-2xl font-medium transition">Save Locally</button>
         </div>
     </div>
 
@@ -164,39 +177,41 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
-        // Updated Catalog: Only White Out and Black Out are available. All others are locked out and flagged for blurring.
+        // The new Trademark document image applied to all restricted items
+        const restrictedImg = "https://i.postimg.cc/1RDJ2qLm/trademark.jpg";
+
         const catalog = {
             "Football": [
-                { name: "White Out Edition", desc: "Available Now", image: "https://i.postimg.cc/J44FNJdL/white-pit-happens.jpg", heroTitle: "White Out Edition", previewTxt: "Viewing: White Out Edition", iconBg: "bg-white border-gray-300", isAvailable: true, badgeText: "", blur: false },
-                { name: "Black Out Edition", desc: "Available Now", image: "https://i.postimg.cc/vBFjfNCn/black-pit-happens.jpg", heroTitle: "Black Out Edition", previewTxt: "Viewing: Black Out Edition", iconBg: "bg-black", isAvailable: true, badgeText: "", blur: false },
-                { name: "12th Man Purple", desc: "Unavailable", image: "https://i.postimg.cc/R0thSzgF/Pit.jpg", heroTitle: "12th Man Edition", previewTxt: "Viewing: Restricted Design", iconBg: "bg-purple-700", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Stand My Ground", desc: "Available Now", image: "https://i.postimg.cc/FzWCF4GL/blackout.jpg", heroTitle: "Stand My Ground", previewTxt: "Viewing: Stand My Ground Edition", iconBg: "bg-black", isAvailable: true, badgeText: "", blur: false },
+                { name: "Won't Back Down", desc: "Available Now", image: "https://i.postimg.cc/kX2fNLfc/whiteout.jpg", heroTitle: "Won't Back Down", previewTxt: "Viewing: Won't Back Down Edition", iconBg: "bg-white border-gray-300", isAvailable: true, badgeText: "", blur: false },
+                { name: "12th Man Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-700", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Fan Favorites": [
-                { name: "Price Hill Pride", desc: "Unavailable", image: "https://i.postimg.cc/3wZZWZ9F/71127A7F-7F2D-418A-99A2-BB9DBAF4FEE1.png", heroTitle: "Price Hill Pride", previewTxt: "Viewing: Restricted Design", iconBg: "bg-purple-600", isAvailable: false, badgeText: "Unavailable", blur: true },
-                { name: "Pit Happens Hoodie", desc: "Unavailable", image: "https://i.postimg.cc/JhcJWMZw/sweatshirt.jpg", heroTitle: "Classic Hoodie", previewTxt: "Viewing: Restricted Design", iconBg: "bg-purple-800", isAvailable: false, badgeText: "Unavailable", blur: true },
-                { name: "Fan Favorite", desc: "Unavailable", image: "https://i.postimg.cc/zfRw5PLc/image-(1).png", heroTitle: "", previewTxt: "Viewing: Restricted Design", iconBg: "bg-yellow-400", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Community Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true },
+                { name: "Pit Happens Hoodie", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-800", isAvailable: false, badgeText: "Unavailable", blur: true },
+                { name: "Fan Favorite", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-yellow-400", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Basketball": [
-                { name: "Hans Hans", desc: "Unavailable", image: "https://i.postimg.cc/pVnVqLYw/image.png", heroTitle: "", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-500", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Court Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-500", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Bowling": [
-                { name: "Panther Strike Tee", desc: "Unavailable", image: "https://i.postimg.cc/rw5gK6xj/69C3D1EB-942C-4E10-834C-3D525197F528.jpg", heroTitle: "Kingpin Edition", previewTxt: "Viewing: Restricted Design", iconBg: "bg-purple-900", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Strike Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-900", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Baseball": [
-                { name: "Baseball Tee", desc: "Unavailable", image: "https://via.placeholder.com/600x600/ffffff/4c1d95?text=Baseball+Shirt+Coming+Soon", heroTitle: "", previewTxt: "Viewing: Restricted Design", iconBg: "bg-red-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Baseball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-red-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Lacrosse": [
-                { name: "Lacrosse Tee", desc: "Unavailable", image: "https://i.postimg.cc/gcTpFF4q/lax.jpg", heroTitle: "", previewTxt: "Viewing: Restricted Design", iconBg: "bg-green-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Lacrosse Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-green-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Soccer": [
-                { name: "PITch HAPPENS Tee", desc: "Unavailable", image: "https://i.postimg.cc/vHsq72mZ/soccer.jpg", heroTitle: "The Pitch Edition", previewTxt: "Viewing: Restricted Design", iconBg: "bg-purple-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "PITch HAPPENS Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Volleyball": [
-                { name: "Volleyball Tee", desc: "Unavailable", image: "https://i.postimg.cc/zBGqzbxr/volleyball.jpg", heroTitle: "", previewTxt: "Viewing: Restricted Design", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Volleyball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Unavailable", blur: true }
             ]
         };
 
-        let currentSport = "Football";
+        let currentSport = Object.keys(catalog)[0];
         let currentStyleIndex = 0;
         let totalShirts = localStorage.getItem('pit_totalShirts') ? parseInt(localStorage.getItem('pit_totalShirts')) : 47;
         let batchShirts = localStorage.getItem('pit_batchShirts') ? parseInt(localStorage.getItem('pit_batchShirts')) : 12;
@@ -205,12 +220,29 @@
             emailjs.init("leFWeb3f3mOFMCdZU"); 
         })();
 
+        // Background Music Logic
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('music-btn');
+            if (music.paused) {
+                music.play();
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Music On';
+                btn.classList.add('bg-orange-600');
+                btn.classList.remove('bg-gray-800');
+            } else {
+                music.pause();
+                btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Music Off';
+                btn.classList.remove('bg-orange-600');
+                btn.classList.add('bg-gray-800');
+            }
+        }
+
         function initCatalog() {
             const sportContainer = document.getElementById('sport-container');
             sportContainer.innerHTML = '';
-            
+            let isFirst = true;
             Object.keys(catalog).forEach((sport, index) => {
-                const checked = (sport === currentSport) ? 'checked' : '';
+                const checked = isFirst ? 'checked' : '';
                 sportContainer.innerHTML += `
                     <div>
                         <input type="radio" id="sport-${index}" name="sport" value="${sport}" onchange="selectSport('${sport}')" ${checked}>
@@ -219,8 +251,9 @@
                         </label>
                     </div>
                 `;
+                isFirst = false;
             });
-            selectSport(currentSport);
+            selectSport(Object.keys(catalog)[0]);
         }
 
         function selectSport(sportName) {
@@ -250,11 +283,10 @@
             mainShirtImg.src = styleData.image;
             document.getElementById('variant-description').textContent = styleData.previewTxt;
             
-            // Apply Heavy Blur for restricted items
             if(styleData.blur) {
-                mainShirtImg.classList.add('blur-2xl', 'opacity-80');
+                mainShirtImg.classList.add('blur-2xl', 'opacity-80', 'bg-white');
             } else {
-                mainShirtImg.classList.remove('blur-2xl', 'opacity-80');
+                mainShirtImg.classList.remove('blur-2xl', 'opacity-80', 'bg-white');
             }
             
             const heroSubtitle = document.getElementById('hero-subtitle');
@@ -270,10 +302,10 @@
             for(let i = 0; i < totalStyles; i++) {
                 const btn = document.getElementById(`btn-style-${i}`);
                 if(i === index) {
-                    btn.classList.add('border-purple-600', 'bg-purple-50', 'text-purple-900');
+                    btn.classList.add('border-orange-600', 'bg-orange-50', 'text-orange-900');
                     btn.classList.remove('border-gray-300', 'bg-white', 'text-gray-700');
                 } else {
-                    btn.classList.remove('border-purple-600', 'bg-purple-50', 'text-purple-900');
+                    btn.classList.remove('border-orange-600', 'bg-orange-50', 'text-orange-900');
                     btn.classList.add('border-gray-300', 'bg-white', 'text-gray-700');
                 }
             }
@@ -287,13 +319,13 @@
                 comingSoonBadge.classList.add('hidden');
                 submitBtn.textContent = "Review Order & Pay @pithappens";
                 submitBtn.classList.remove('bg-gray-400');
-                submitBtn.classList.add('bg-purple-700', 'hover:bg-purple-800');
+                submitBtn.classList.add('bg-orange-600', 'hover:bg-orange-700');
             } else {
                 controls.classList.add('opacity-40', 'pointer-events-none');
                 comingSoonBadge.textContent = styleData.badgeText || "Unavailable";
                 comingSoonBadge.classList.remove('hidden');
                 submitBtn.textContent = "Item Unavailable";
-                submitBtn.classList.remove('bg-purple-700', 'hover:bg-purple-800');
+                submitBtn.classList.remove('bg-orange-600', 'hover:bg-orange-700');
                 submitBtn.classList.add('bg-gray-400');
             }
         }
@@ -365,7 +397,7 @@
                 
                 <div class="mb-4">
                     <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Style Selection</label>
-                    <select class="style-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-purple-600" onchange="handleStyleChange(this)">
+                    <select class="style-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-orange-500" onchange="handleStyleChange(this)">
                         ${optionsHtml}
                     </select>
                 </div>
@@ -373,7 +405,7 @@
                 <div class="grid grid-cols-3 gap-4">
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Size</label>
-                        <select class="size-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-purple-600" onchange="updateTotal()">
+                        <select class="size-select w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-sm focus:outline-none focus:border-orange-500" onchange="updateTotal()">
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L" selected>L</option>
@@ -384,7 +416,7 @@
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Qty</label>
-                        <input type="number" value="1" min="1" onchange="updateTotal()" oninput="updateTotal()" class="qty-input w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-center text-sm focus:outline-none focus:border-purple-600">
+                        <input type="number" value="1" min="1" onchange="updateTotal()" oninput="updateTotal()" class="qty-input w-full px-3 py-2.5 border border-gray-300 rounded-xl bg-white text-center text-sm focus:outline-none focus:border-orange-500">
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Total</label>
@@ -496,7 +528,7 @@
                 text: window.location.href, 
                 width: 200, 
                 height: 200,
-                colorDark : "#4c1d95",
+                colorDark : "#ea580c",
                 colorLight : "#ffffff"
             });
         };
