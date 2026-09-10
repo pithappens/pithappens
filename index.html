@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Pit Happens Apparel</title>
+    <title>Official Pit Happens™ Apparel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -26,8 +26,8 @@
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">P</div>
                 <div>
-                    <h1 class="text-2xl font-bold">Official Pit Happens Apparel</h1>
-                    <p class="text-xs text-gray-500 -mt-1">Grit Over Gift</p>
+                    <h1 class="text-2xl font-bold">Official Pit Happens™ Apparel</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Unsanctioned Tee</p>
                 </div>
             </div>
         </div>
@@ -44,10 +44,10 @@
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-6xl font-bold leading-none tracking-tighter mb-4">
-                    PIT HAPPENS<br>
+                    PIT HAPPENS™<br>
                     <span id="hero-subtitle" class="text-orange-400 text-4xl block mt-2 transition-opacity duration-300">Stand My Ground</span>
                 </h2>
-                <p class="text-xl text-gray-300 mb-2">Premium tees for Pit Happens fans.</p>
+                <p class="text-xl text-gray-300 mb-2">Premium tees for Pit Happens™ fans.</p>
                 <p id="variant-description" class="text-sm text-gray-400 italic mb-8">Viewing: Stand My Ground Edition</p>
                 <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" 
                         class="px-8 py-4 bg-white text-orange-600 rounded-3xl font-semibold text-lg hover:scale-105 transition shadow-lg">
@@ -130,10 +130,10 @@
         <div class="max-w-4xl mx-auto px-6">
             <p class="mb-2 uppercase tracking-wider font-semibold text-gray-500">Legal Disclaimer</p>
             <p>
-                "Pit Happens" is an independent apparel brand. We are not affiliated with, associated with, authorized by, sponsored by, or in any way officially connected with any high school, educational institution, or archdiocese. All references are for community pride and descriptive purposes only.
+                "Pit Happens™" is an independent apparel brand. We are not affiliated with, associated with, authorized by, sponsored by, or in any way officially connected with any high school, educational institution, or archdiocese. All references are for community pride and descriptive purposes only.
             </p>
             <p class="mt-4 text-gray-600">
-                &copy; 2026 Pit Happens. All Rights Reserved.
+                &copy; 2026 Pit Happens™. All Rights Reserved.
             </p>
         </div>
     </footer>
@@ -177,37 +177,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
-        // The new Trademark document image applied to all restricted items
         const restrictedImg = "https://i.postimg.cc/1RDJ2qLm/trademark.jpg";
 
         const catalog = {
             "Football": [
                 { name: "Stand My Ground", desc: "Available Now", image: "https://i.postimg.cc/FzWCF4GL/blackout.jpg", heroTitle: "Stand My Ground", previewTxt: "Viewing: Stand My Ground Edition", iconBg: "bg-black", isAvailable: true, badgeText: "", blur: false },
                 { name: "Won't Back Down", desc: "Available Now", image: "https://i.postimg.cc/kX2fNLfc/whiteout.jpg", heroTitle: "Won't Back Down", previewTxt: "Viewing: Won't Back Down Edition", iconBg: "bg-white border-gray-300", isAvailable: true, badgeText: "", blur: false },
-                { name: "12th Man Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-700", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "12th Man Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-700", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Fan Favorites": [
-                { name: "Community Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true },
-                { name: "Pit Happens Hoodie", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-800", isAvailable: false, badgeText: "Unavailable", blur: true },
-                { name: "Fan Favorite", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-yellow-400", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Community Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true },
+                { name: "Pit Happens Hoodie", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-800", isAvailable: false, badgeText: "Unavailable", blur: true },
+                { name: "Fan Favorite", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-yellow-400", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Basketball": [
-                { name: "Court Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-500", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Court Edition", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-500", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Bowling": [
-                { name: "Strike Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-900", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Strike Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-900", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Baseball": [
-                { name: "Baseball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-red-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Baseball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-red-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Lacrosse": [
-                { name: "Lacrosse Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-green-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Lacrosse Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-green-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Soccer": [
-                { name: "PITch HAPPENS Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "PITch HAPPENS Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-orange-600", isAvailable: false, badgeText: "Unavailable", blur: true }
             ],
             "Volleyball": [
-                { name: "Volleyball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Restricted Design", previewTxt: "Viewing: Restricted Design", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Unavailable", blur: true }
+                { name: "Volleyball Tee", desc: "Unavailable", image: restrictedImg, heroTitle: "Unsanctioned Tees", previewTxt: "Viewing: Unsanctioned Tees", iconBg: "bg-teal-500", isAvailable: false, badgeText: "Unavailable", blur: true }
             ]
         };
 
@@ -497,7 +496,7 @@
             const sizeString = sizes.join("\n");
 
             const venmoItemSummary = data.items.map(i => `${i.qty}x ${i.size} (${i.style.replace('Football - ', '')})`).join(", ");
-            const note = encodeURIComponent(`Pit Happens: ${data.name} (${venmoItemSummary})`);
+            const note = encodeURIComponent(`Pit Happens™: ${data.name} (${venmoItemSummary})`);
             const venmoUrl = `https://venmo.com/pithappens?txn=pay&amount=${data.total.toFixed(2)}&note=${note}`;
 
             try {
